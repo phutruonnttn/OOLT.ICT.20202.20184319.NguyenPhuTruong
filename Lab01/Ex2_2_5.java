@@ -3,10 +3,11 @@ package Lab01;
 import java.util.Scanner;
 
 public class Ex2_2_5 {
+
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         int flag;
-        double a = 0,b = 0;
+        double a = 0, b = 0;
         do {
             System.out.print("Enter the first number: ");
             String m = keyboard.nextLine();
@@ -29,10 +30,14 @@ public class Ex2_2_5 {
                 System.err.println("It's not a double number. Please enter again!");
             }
         } while (flag == 0);
-        
-        System.out.println("Sum of two numbers is " + (a+b));
-        System.out.println("Difference of two numbers is " + (a-b));
-        System.out.println("Product of two numbers is " + (a*b));
-        System.out.println("Quotient of two numbers is " + (a/b));
+
+        System.out.println("Sum of two numbers is " + (a + b));
+        System.out.println("Difference of two numbers is " + (a - b));
+        System.out.println("Product of two numbers is " + (a * b));
+        if (b == 0) {
+            System.out.println("Since b=0, we have no quotient!");
+        } else {
+            System.out.println("Quotient of two numbers is " + (a / b));
+        }
     }
 }
