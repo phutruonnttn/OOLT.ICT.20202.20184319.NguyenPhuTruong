@@ -64,5 +64,45 @@ public class DigitalVideoDisc {
         this.cost = cost;
     }
     
+    public void displayColumn(int blanks, String s) {
+        if (s == null) {
+            s = "-";
+        }
+        int cBlanks = blanks - s.length();
+        if (cBlanks % 2 == 0) {
+            for (int i = 1; i <= cBlanks / 2; i++) {
+                System.out.print(" ");
+            }
+            System.out.print(s);
+            for (int i = 1; i <= cBlanks / 2; i++) {
+                System.out.print(" ");
+            }
+        } else {
+            for (int i = 1; i <= cBlanks / 2; i++) {
+                System.out.print(" ");
+            }
+            System.out.print(s);
+            for (int i = 1; i <= cBlanks / 2 + 1; i++) {
+                System.out.print(" ");
+            }
+        }
+        System.out.print("|");
+    }
     
+    public void displayDVD() {
+        displayColumn(21, this.title);
+        displayColumn(22, this.category);
+        displayColumn(16, this.director);
+        String tLength = String.valueOf(this.length);
+        if (tLength.equals("0")) {
+            tLength = "-";
+        }
+        displayColumn(10, tLength);
+        String tCost = String.valueOf(this.cost);
+        if (tCost.equals("0.0")) {
+            tCost = "-";
+        }
+        displayColumn(16, tCost);
+        System.out.println("");
+    }
 }

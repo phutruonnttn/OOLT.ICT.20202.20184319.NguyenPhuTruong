@@ -11,8 +11,10 @@ package Lab03;
  */
 public class Aims {
     public static void main(String[] args) {
+        //create a new cart
         Cart anOrder = new Cart();
         
+        //add DVD to the cart
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
         anOrder.addDigitalVideoDisc(dvd1);
         
@@ -22,7 +24,18 @@ public class Aims {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 19.95f);
         anOrder.addDigitalVideoDisc(dvd3);
         
-        System.out.println("Total Cost is: ");
+        DigitalVideoDisc dvd4 = new DigitalVideoDisc("Harry Potter");
+        anOrder.addDigitalVideoDisc(dvd4);
+        
+        //show the cart
+        anOrder.displayCart();
+        
+        //remove DVD from the cart
+        anOrder.removeDigitalVideoDisc(dvd3);
+        anOrder.displayCart();
+        
+        //print total cost
+        System.out.print("Total Cost is: ");
         System.out.println(anOrder.totalCost());
     }
 }
